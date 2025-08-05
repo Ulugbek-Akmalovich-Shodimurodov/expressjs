@@ -36,7 +36,16 @@ app.get('/api/books/:id', (req, res) => {
 });
 
 app.get('/api/books', (req, res) => {
-    res.send(['qwert', '12345', 'asdfg', 'adhudcxmas'])
+    res.send(books)
+})
+
+app.post('/api/books/', (req, res)=>{
+    const book = {
+        id: books.length + 1,
+        name: req.params.name
+    };
+    books.push(book);
+    res.status(201).send(book);
 })
 
 const port = process.env.PORT || 5000;
