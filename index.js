@@ -1,28 +1,19 @@
-const express = require('express')
+const express = require('express');
 const app = express();
+const Joi = require('joi')
+
+app.use(express.json()); // Body parser
 
 let books = [
-    {
-        id: 1,
-        name: "O'tkan kunlar"
-    },
-    {
-        id: 2,
-        name: "Kecha va kunduz"
-    },
-    {
-        id: 3,
-        name: "Mehrobdan chayon"
-    },
-    {
-        id: 4,
-        name: "Alpomish"
-    },
-]
+    { id: 1, name: "O'tkan kunlar" },
+    { id: 2, name: "Kecha va kunduz" },
+    { id: 3, name: "Mehrobdan chayon" },
+    { id: 4, name: "Alpomish" },
+];
 
 app.get('/', (req, res) => {
-    res.send('Salom')
-})
+    res.send('Salom');
+});
 
 app.get('/api/books/:id', (req, res) => {
     const bookId = parseInt(req.params.id);
@@ -36,20 +27,32 @@ app.get('/api/books/:id', (req, res) => {
 });
 
 app.get('/api/books', (req, res) => {
-    res.send(books)
-})
+    res.send(books);
+});
 
-app.post('/api/books/', (req, res)=>{
+app.post('/api/books', (req, res) => {
+
+    const bookSchema = Joi.object({
+        name: Joi.string().pattern(/^[a-zA-Z0-9\s.,'-]+$/).required().min(3)
+    });
+
+
+    const { error } = bookSchema.validate(req.body);
+
+    if (error) {
+        return res.status(400).send(error.details[0].message);
+    }
+
     const book = {
         id: books.length + 1,
-        name: req.params.name
+        name: req.body.name
     };
+
     books.push(book);
     res.status(201).send(book);
-})
+});
 
 const port = process.env.PORT || 5000;
-
 app.listen(port, () => {
     console.log(`${port}chi portni eshitishni boshladim...`);
-})
+});

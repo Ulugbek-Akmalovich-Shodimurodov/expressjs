@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Ulugbek-Akmalovich-Shodimurodov/expressjs#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "joi": "^18.0.0"
   }
 }
