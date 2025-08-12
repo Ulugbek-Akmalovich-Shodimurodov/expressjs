@@ -1,4 +1,6 @@
-app.use(function (req, res, next){
+function log (req, res, next){
     console.log("log yozish...");
     next(); 
-})
+}
+
+module.exports = log;

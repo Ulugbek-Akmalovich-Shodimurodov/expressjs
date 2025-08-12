@@ -1,13 +1,11 @@
 const express = require('express');
 const app = express();
 const Joi = require('joi')
+const logger = require('./logger')
 
 app.use(express.json()); // Body parser
 
-app.use(function (req, res, next){
-    console.log("log yozish...");
-    next(); 
-})
+app.use(logger);
 
 let books = [
     { id: 1, name: "O'tkan kunlar" },
