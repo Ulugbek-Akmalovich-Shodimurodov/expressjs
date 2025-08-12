@@ -6,9 +6,7 @@ app.use(express.json()); // Body parser
 
 app.use(function (req, res, next){
     console.log("log yozish...");
-    next();
-    
-    
+    next(); 
 })
 
 let books = [
