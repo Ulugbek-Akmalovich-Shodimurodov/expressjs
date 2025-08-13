@@ -1,0 +1,10 @@
+{"time":"2025-08-13T11:44:44.682Z","method":"POST","url":"/api/books","status":201,"responseTimeMs":820,"ip":"::1","mac":"MAC-topilmadi"}
+{"time":"2025-08-13T11:44:49.068Z","method":"POST","url":"/api/books","status":201,"responseTimeMs":66,"ip":"::1","mac":"MAC-topilmadi"}
+{"time":"2025-08-13T11:44:52.852Z","method":"POST","url":"/api/books","status":201,"responseTimeMs":64,"ip":"::1","mac":"MAC-topilmadi"}
+{"time":"2025-08-13T11:45:05.688Z","method":"POST","url":"/api/books","status":201,"responseTimeMs":84,"ip":"::1","mac":"MAC-topilmadi"}
+{"time":"2025-08-13T11:45:12.635Z","method":"GET","url":"/api/books","status":200,"responseTimeMs":71,"ip":"::1","mac":"MAC-topilmadi"}
+{"time":"2025-08-13T11:45:17.626Z","method":"POST","url":"/api/books","status":201,"responseTimeMs":65,"ip":"::1","mac":"MAC-topilmadi"}
+{"time":"2025-08-13T11:45:41.952Z","method":"POST","url":"/api/books","status":201,"responseTimeMs":86,"ip":"::1","mac":"MAC-topilmadi"}
+{"time":"2025-08-13T11:45:55.503Z","method":"GET","url":"/api/books","status":200,"responseTimeMs":82,"ip":"::1","mac":"MAC-topilmadi"}
+{"time":"2025-08-13T11:46:01.966Z","method":"POST","url":"/api/books","status":201,"responseTimeMs":62,"ip":"::1","mac":"MAC-topilmadi"}
+{"time":"2025-08-13T11:46:26.920Z","method":"POST","url":"/api/books","status":201,"responseTimeMs":93,"ip":"::1","mac":"MAC-topilmadi"}
