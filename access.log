@@ -1,0 +1,7 @@
+::1 - - [13/Aug/2025:11:16:42 +0000] "GET /api/books HTTP/1.1" 200 129 "-" "PostmanRuntime/7.45.0"
+::1 - - [13/Aug/2025:11:17:04 +0000] "GET /api/books HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+::1 - - [13/Aug/2025:11:18:48 +0000] "GET /api/books HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+::1 - - [13/Aug/2025:11:18:57 +0000] "GET /api/books HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+::1 - - [13/Aug/2025:11:21:13 +0000] "GET /api/books HTTP/1.1" 200 129 "-" "PostmanRuntime/7.45.0"
+::1 - - [13/Aug/2025:11:21:24 +0000] "POST /api/books HTTP/1.1" 201 35 "-" "PostmanRuntime/7.45.0"
+::1 - - [13/Aug/2025:11:21:34 +0000] "GET /api/books HTTP/1.1" 200 165 "-" "PostmanRuntime/7.45.0"

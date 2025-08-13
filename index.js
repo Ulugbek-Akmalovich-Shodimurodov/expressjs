@@ -2,10 +2,16 @@ const express = require('express');
 const app = express();
 const Joi = require('joi')
 const logger = require('./logger')
+const helmet = require('helmet');
+const morgan = require("morgan")
+const fs = require('fs');
+const path = require('path');
+
 
 app.use(express.json()); // Body parser
-
 app.use(logger);
+app.use(morgan("tiny"));
+app.use(helmet());
 
 let books = [
     { id: 1, name: "O'tkan kunlar" },
@@ -13,6 +19,15 @@ let books = [
     { id: 3, name: "Mehrobdan chayon" },
     { id: 4, name: "Alpomish" },
 ];
+
+// Loglar saqlanadigan fayl yo‘lini belgilash
+const logStream = fs.createWriteStream(
+  path.join(__dirname, 'access.log'), // log fayl nomi
+  { flags: 'a' } // 'a' → mavjud faylga yozishni davom ettiradi
+);
+
+// Morgan middleware — loglarni faylga yozish
+app.use(morgan('combined', { stream: logStream }));
 
 app.get('/', (req, res) => {
     res.send('Salom');
