@@ -22,53 +22,50 @@ let books = [
 ];
 
 
-const logFile = path.join(__dirname, 'logs.json');
+// const logFile = path.join(__dirname, 'logs.json');
 
-// MAC manzilni olish funksiyasi
-function getMacByIp(ip) {
-  try {
-    if (ip.startsWith('::ffff:')) ip = ip.replace('::ffff:', ''); // IPv4 format
-    const result = execSync(`arp -n ${ip}`).toString();
-    const match = result.match(/(([a-f0-9]{2}:){5}[a-f0-9]{2})/i);
-    return match ? match[0] : null;
-  } catch (err) {
-    return null;
-  }
-}
+// // MAC manzilni olish funksiyasi
+// function getMacByIp(ip) {
+//   try {
+//     if (ip.startsWith('::ffff:')) ip = ip.replace('::ffff:', ''); // IPv4 format
+//     const result = execSync(`arp -n ${ip}`).toString();
+//     const match = result.match(/(([a-f0-9]{2}:){5}[a-f0-9]{2})/i);
+//     return match ? match[0] : null;
+//   } catch (err) {
+//     return null;
+//   }
+// }
 
-// Morgan o‘rniga custom logger (JSON format)
-app.use((req, res, next) => {
-  const start = Date.now();
+// // Morgan o‘rniga custom logger (JSON format)
+// app.use((req, res, next) => {
+//   const start = Date.now();
 
-  res.on('finish', () => {
-    const ip = req.ip || req.connection.remoteAddress;
-    const mac = getMacByIp(ip) || 'MAC-topilmadi';
+//   res.on('finish', () => {
+//     const ip = req.ip || req.connection.remoteAddress;
+//     const mac = getMacByIp(ip) || 'MAC-topilmadi';
 
-    const logData = {
-      time: new Date().toISOString(),
-      method: req.method,
-      url: req.originalUrl,
-      status: res.statusCode,
-      responseTimeMs: Date.now() - start,
-      ip: ip,
-      mac: mac
-    };
+//     const logData = {
+//       time: new Date().toISOString(),
+//       method: req.method,
+//       url: req.originalUrl,
+//       status: res.statusCode,
+//       responseTimeMs: Date.now() - start,
+//       ip: ip,
+//       mac: mac
+//     };
 
-    // Faylga yozish
-    fs.appendFile(logFile, JSON.stringify(logData) + '\n', (err) => {
-      if (err) console.error('Log yozishda xato:', err);
-    });
+//     // Faylga yozish
+//     fs.appendFile(logFile, JSON.stringify(logData) + '\n', (err) => {
+//       if (err) console.error('Log yozishda xato:', err);
+//     });
 
-    // Konsolga ham chiqarish
-    console.log(logData);
-  });
+//     // Konsolga ham chiqarish
+//     console.log(logData);
+//   });
 
-  next();
-});
+//   next();
+// });
 
-
-
-/*
 
 // Loglar saqlanadigan fayl yo‘lini belgilash
 const logStream = fs.createWriteStream(
@@ -78,8 +75,6 @@ const logStream = fs.createWriteStream(
 
 // Morgan middleware — loglarni faylga yozish
 app.use(morgan('combined', { stream: logStream }));
-
-*/
 
 app.get('/', (req, res) => {
     res.send('Salom');
