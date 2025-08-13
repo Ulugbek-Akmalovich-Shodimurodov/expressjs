@@ -12,3 +12,7 @@
 ::1 - - [13/Aug/2025:11:49:44 +0000] "POST /api/books HTTP/1.1" 201 35 "-" "PostmanRuntime/7.45.0"
 ::1 - - [13/Aug/2025:11:49:46 +0000] "POST /api/books HTTP/1.1" 201 26 "-" "PostmanRuntime/7.45.0"
 ::1 - - [13/Aug/2025:11:49:46 +0000] "POST /api/books HTTP/1.1" 201 27 "-" "PostmanRuntime/7.45.0"
+::1 - - [13/Aug/2025:11:57:08 +0000] "POST /api/books HTTP/1.1" 201 26 "-" "PostmanRuntime/7.45.0"
+::1 - - [13/Aug/2025:11:57:11 +0000] "POST /api/books HTTP/1.1" 201 26 "-" "PostmanRuntime/7.45.0"
+::1 - - [13/Aug/2025:11:58:25 +0000] "POST /api/books HTTP/1.1" 201 33 "-" "PostmanRuntime/7.45.0"
+::1 - - [13/Aug/2025:12:00:02 +0000] "GET /api/books HTTP/1.1" 200 217 "-" "PostmanRuntime/7.45.0"
