@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Ulugbek-Akmalovich-Shodimurodov/expressjs#readme",
   "description": "",
   "dependencies": {
+    "config": "^4.1.0",
     "express": "^5.1.0",
     "fs": "^0.0.1-security",
     "helmet": "^8.1.0",
