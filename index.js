@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const config = require("config")
 
 
 app.use(express.json()); // Body parser
@@ -22,6 +23,9 @@ let books = [
     { id: 3, name: "Mehrobdan chayon" },
     { id: 4, name: "Alpomish" },
 ];
+
+console.log(config.get('name'));
+console.log(config.get('mailserver.host'));
 
 // Loglar saqlanadigan fayl yo‘lini belgilash
 const logStream = fs.createWriteStream(
