@@ -26,6 +26,7 @@ let books = [
 
 console.log(config.get('name'));
 console.log(config.get('mailserver.host'));
+console.log(config.get('mailserver.password'));
 
 // Loglar saqlanadigan fayl yo‘lini belgilash
 const logStream = fs.createWriteStream(
